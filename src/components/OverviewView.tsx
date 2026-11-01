@@ -47,6 +47,34 @@ export const OverviewView: React.FC<OverviewViewProps> = ({ onSelectTab }) => {
         </div>
       </div>
 
+      {/* Stockfish Engine Missed-Win Trainer Banner */}
+      <div
+        onClick={() => onSelectTab('puzzles')}
+        className="bg-gradient-to-r from-amber-500/20 via-neutral-900 to-emerald-500/10 border border-amber-500/40 rounded-2xl p-4 shadow-lg cursor-pointer hover:border-amber-400 transition-all flex items-center justify-between group"
+      >
+        <div className="flex items-center gap-3">
+          <div className="w-11 h-11 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform flex-shrink-0">
+            🧩
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <h3 className="text-sm font-extrabold text-white group-hover:text-amber-300 transition-colors">
+                Stockfish 19 Tactical Puzzles
+              </h3>
+              <span className="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-bold border border-emerald-500/30">
+                10 Puzzles
+              </span>
+            </div>
+            <p className="text-[11px] text-neutral-300 mt-0.5 line-clamp-1">
+              Positions where Ayaz had decisive advantage (+3.0 to +4.5) but let the win slip.
+            </p>
+          </div>
+        </div>
+        <div className="text-amber-400 font-extrabold text-sm pl-2 whitespace-nowrap">
+          Solve →
+        </div>
+      </div>
+
       {/* Quick Verdict 1: AS WHITE */}
       <div className="bg-[#131316] border border-neutral-800 rounded-2xl p-5 space-y-4 shadow-lg">
         <div className="flex items-center justify-between">

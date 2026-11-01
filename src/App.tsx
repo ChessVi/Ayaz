@@ -4,6 +4,7 @@ import { BottomNav, TabType } from './components/BottomNav';
 import { OverviewView } from './components/OverviewView';
 import { ColorRepertoireView } from './components/ColorRepertoireView';
 import { StudyPlanView } from './components/StudyPlanView';
+import { PuzzleView } from './components/PuzzleView';
 import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
@@ -29,6 +30,10 @@ export const App: React.FC = () => {
 
           {activeTab === 'study' && (
             <StudyPlanView />
+          )}
+
+          {activeTab === 'puzzles' && (
+            <PuzzleView />
           )}
         </main>
       </div>

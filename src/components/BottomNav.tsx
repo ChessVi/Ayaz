@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type TabType = 'overview' | 'white' | 'black' | 'study';
+export type TabType = 'overview' | 'white' | 'black' | 'study' | 'puzzles';
 
 interface BottomNavProps {
   activeTab: TabType;
@@ -10,14 +10,15 @@ interface BottomNavProps {
 export const BottomNav: React.FC<BottomNavProps> = ({ activeTab, onChangeTab }) => {
   const tabs = [
     { id: 'overview' as TabType, label: 'Verdict', icon: '⚡' },
-    { id: 'white' as TabType, label: 'As White', icon: '♔' },
-    { id: 'black' as TabType, label: 'As Black', icon: '♚' },
-    { id: 'study' as TabType, label: 'Study Plan', icon: '📚' },
+    { id: 'white' as TabType, label: 'White', icon: '♔' },
+    { id: 'black' as TabType, label: 'Black', icon: '♚' },
+    { id: 'study' as TabType, label: 'Study', icon: '📚' },
+    { id: 'puzzles' as TabType, label: 'Puzzles', icon: '🧩' },
   ];
 
   return (
     <nav className="fixed bottom-0 inset-x-0 bg-[#121215]/95 backdrop-blur-lg border-t border-neutral-800 z-40 pb-safe">
-      <div className="max-w-2xl mx-auto px-2 flex justify-around items-center h-16">
+      <div className="max-w-2xl mx-auto px-1 flex justify-around items-center h-16">
         {tabs.map((t) => {
           const isActive = activeTab === t.id;
           return (
@@ -34,10 +35,10 @@ export const BottomNav: React.FC<BottomNavProps> = ({ activeTab, onChangeTab }) 
               }`}
             >
               {isActive && (
-                <span className="absolute -top-1 w-8 h-1 bg-gradient-to-r from-amber-500 to-amber-300 rounded-full" />
+                <span className="absolute -top-1 w-7 h-1 bg-gradient-to-r from-amber-500 to-amber-300 rounded-full" />
               )}
-              <span className="text-xl mb-0.5">{t.icon}</span>
-              <span className="text-[11px] font-medium tracking-tight">
+              <span className="text-lg sm:text-xl mb-0.5">{t.icon}</span>
+              <span className="text-[10px] sm:text-[11px] font-medium tracking-tight">
                 {t.label}
               </span>
             </button>
